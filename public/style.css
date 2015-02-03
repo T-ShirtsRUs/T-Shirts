@@ -1,0 +1,39 @@
+nav {
+  height: 80px;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav a {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+
+.container {
+  padding-top: 120px;
+}
+
+.col-md-4 {
+  padding: 20px;
+}
+
+.item-wrapper {
+  text-align: center;
+  background: #ecf0f1;
+  padding: 20px;
+}
+
+.modal-body {
+  min-height: 300px;
+}
+
+.modal-body img {
+  width: 240px;
+}
+
+#submit-order {
+  margin-top: 24px;
+}

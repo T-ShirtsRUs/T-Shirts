@@ -3,32 +3,27 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <h1>T-Shirt Up Yo Bleep!</h1>
+    <a class="btn btn-primary" role="button" id="submit-order" hrerf="admin">Admin</a>
+  </nav>
 <div class = "container">
-  <div class="row top">
-    <div class="col-md-offset-11">
-      <a href="admin">
-        <button name="button">Admin</button>
-      </a>
-    </div>
-    <div class = "col-md-offset-4">
-      <h1>T-Shirt Up Yo Bleep!</h1>
-    </div>
-  </div>
+
   <div class = "row">
     <% tshirts.each do |tshirt| %>
       <div class="col-md-4">
-        <div id="name">
-          <img width=100 height=120 src="<%= tshirt.img_url%>"/>
+        <div class="item-wrapper">
+          <img width=100 height=120 src="<%= tshirt.img_url %>"/>
           <h3><%= tshirt.name%></h3>
           <h3>$<%= tshirt.price%></h3>
-          <div id="name">
-            <a class="btn btn-default" role="button" data-toggle="modal" data-target="#<%= tshirt.id.to_s %>">BUY</a>
-          </div>
+          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#<%= tshirt.id.to_s %>">BUY</a>
         </div>
-      </div>
+    </div>
+
 
       <div class="modal fade" id="<%= tshirt.id.to_s %>">
         <div class="modal-dialog">
@@ -38,26 +33,29 @@
               <h4 class="modal-title" id="myModalLabel"><%= tshirt.name%> shirt</h4>
             </div>
             <div class="modal-body">
-              <img height=120 width=90 src="<%= tshirt.img_url%>">
-              <form action="">
-                <div id="form-quantity">
-                  <h5> Quantity: </h5>
-                  <input type="text" name="some_name" placeholder="<%= tshirt.quantity%> Left in Stock.">
-                  <span> </span>
-                </div>
+              <div class="col-md-6 col-sm-6">
+                <img src="<%= tshirt.img_url%>">
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <form action="">
+                  <div id="form-quantity">
+                    <h5> Quantity: </h5>
+                    <input type="number" name="some_name" min="1" max="<%= tshirt.quantity %>"> <span><i><%= tshirt.quantity%> Left in Stock.</i></span>
+                  </div>
 
-                <div id="form-name">
-                  <h5> Name: </h5>
-                  <input type="text" name="some_name" placeholder="Janis Joplin">
-                </div>
+                  <div id="form-name">
+                    <h5> Name: </h5>
+                    <input type="text" name="some_name" placeholder="Janis Joplin">
+                  </div>
 
-                <div id="form-email">
-                  <h5> Email: </h5>
-                  <input type="text" name="some_name" placeholder="scoobydoo@gmail.com">
+                  <div id="form-email">
+                    <h5> Email: </h5>
+                    <input type="email" name="some_name" placeholder="scoobydoo@gmail.com">
 
-                </div>
-                <button id="submit-order">Submit</button>
-              </form>
+                  </div>
+                  <a class="btn btn-primary" role="button" id="submit-order">Submit</a>
+                </form>
+              </div>
             </div> <!-- End Modal Body -->
           </div> <!-- End Modal Content -->
         </div> <!-- End Modal Dialogue -->
@@ -66,7 +64,7 @@
 
 
     <% end %>
-  </div>
+  </div><!-- end row -->
 
   <div class="row bottom">
     <div class = "col-md-offset-4">

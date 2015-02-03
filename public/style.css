@@ -1,3 +1,8 @@
+/* body {
+  background: url('http://i.giphy.com/7ioyUvLTxCpyw.gif') no-repeat center center;
+  background-size: cover;
+} */
+
 nav {
   height: 80px;
 }
@@ -22,7 +27,8 @@ nav a {
 
 .item-wrapper {
   text-align: center;
-  background: #ecf0f1;
+  /* background: #ecf0f1; */
+  background: rgba(0,0,0,0.5);
   padding: 20px;
 }
 

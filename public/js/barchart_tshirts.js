@@ -1,7 +1,8 @@
 var thought = {
   "thoughts" : [
     {"word" : "wu tang",
-    "count": 100
+    "count": 100,
+    "url" : "http://ecx.images-amazon.com/images/I/61AahwY%2Bj7L._UL1500_.jpg"
     },
 
     {"word" : "iggy asalea",
@@ -10,18 +11,22 @@ var thought = {
     },
 
     {"word" : "minor threat",
-    "count": 60
+    "count": 60,
+    "url" : "https://fashionfades.files.wordpress.com/2010/01/minor-threat-bottled.jpg?w=297"
     },
 
     {"word" : "pavement",
-    "count" : 40
+    "count" : 40,
+    "url": "http://images.brandretailers.com/rock/assets/products/56946/large/pavement-night-falls-men-s-t-shirt-pvt12(1).jpg"
     },
      {"word" : "george carlin",
-    "count": 20
+    "count": 20,
+    "url": "http://ecx.images-amazon.com/images/I/412UGXphwPL._SX342_.jpg"
     },
 
     {"word" : "dice clay",
-    "count": 10
+    "count": 10,
+    "url": "http://brooklynsteez.com/products/215097.jpg"
     },
   ]
 }

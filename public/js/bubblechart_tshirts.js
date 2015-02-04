@@ -1,37 +1,9 @@
-var thought = {
-  "thoughts" : [
-    {"word" : "wu tang",
-    "count": 100
-    },
-
-    {"word" : "iggy asalea",
-    "count": 80,
-    "url": "https://img1.etsystatic.com/043/0/9257203/il_340x270.631035637_ampf.jpg"
-    },
-
-    {"word" : "minor threat",
-    "count": 60
-    },
-
-    {"word" : "pavement",
-    "count" : 40
-    },
-     {"word" : "george carlin",
-    "count": 20
-    },
-
-    {"word" : "dice clay",
-    "count": 10
-    },
-  ]
-}
-
 function drawBubbleChart(root){
   //console.log(root)
     var diameter = 960;
     var width = 200;
         height = 400;
-    var color = d3.scale.category20();
+    var color = d3.scale.category20c();
     var bubble = d3.layout.pack().size([310,310]).padding(1.5).value( function(d) { return d.size})
     var svg = d3.select("body").select(".bubbles")
       .append("svg")
@@ -49,18 +21,19 @@ function drawBubbleChart(root){
       .filter(function(d){ return !d.children;}))
       .enter()
       .append("g")
-      .attr("class","node selected")
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
    var circle = node.append("circle")
        .attr("r", function(d) { return d.r; })
-       .on("click", function(d,i) { d3.selected(".selected",false)})
+      .attr("class","selected")
+      .on("click", update)
        .style("fill", function(d) { return color(d.name) })
        .style("opacity", ".02")
        .transition()
          .duration(2000)
          .style("fill", function(d) { return color(d.name)})
          .style("opacity","05")
+
 
 
    node.append("text")
@@ -93,14 +66,22 @@ function drawBubbleChart(root){
 
 drawBubbleChart(processData(thought))
 
-function update(data) {
+function update(d) {
+  var url = d.url
+  var name = d.name.toUpperCase()
+  console.log(d)
+
+  d3.select(".most-popular").select("img").attr("src", url )
+  d3.select(".most-popular").select("h2").html(name)
   d3.select(".selected")
-    .classed("selected",false)
-    .attr("opacity", .5)
+    .classed("selected-false",true)
+    .style("opacity",.2)
 
   d3.select(this)
-    .classed("selected",true)
-    .attr("opacity", 1)
+    .classed("selected-true",true)
+    .style("opacity", 1)
+        console.log(this)
+
 }
 
 function processData(data) {
@@ -110,47 +91,13 @@ function processData(data) {
    for(var i in obj) {
       //if( !(obj[i].count <= 10 && obj[i].word.length > 5)) {
       //console.log(obj[i])
-      newDataSet.push( {name: obj[i].word,
-         className: obj[i].word.toLowerCase(), size: obj[i].count});
+      newDataSet.push( {
+        name: obj[i].word,
+        className: obj[i].word.toLowerCase(),
+        size: obj[i].count,
+        url: obj[i].url
+      });
       //}
     }
    return {children: newDataSet};
 }
-
-
-
-(function() {
-
-  JSONData = [
-  { "id": 3, "created_at": "Sun May 05 2013", "amount": 12000},
-  { "id": 1, "created_at": "Mon May 13 2013", "amount": 2000},
-  { "id": 2, "created_at": "Thu Jun 06 2013", "amount": 17000},
-  { "id": 4, "created_at": "Thu May 09 2013", "amount": 15000},
-  { "id": 5, "created_at": "Mon Jul 01 2013", "amount": 16000}
-]
-
-  var data = JSONData.slice()
-  var format = d3.time.format("%a %b %d %Y")
-  var amountFn = function(d) { return d.amount }
-  console.log(amountFn)
-  var dateFn = function(d) { return format.parse(d.created_at) }
-
-  var x = d3.time.scale()
-    .range([10, 280])
-    .domain(d3.extent(data, dateFn))
-      console.log(amountFn)
-
-  var y = d3.scale.linear()
-    .range([180, 10])
-    .domain(d3.extent(data, amountFn))
-
-  var svg = d3.select("#demo").append("svg:svg")
-  .attr("width", 300)
-  .attr("height", 200)
-
-  svg.selectAll("circle").data(data).enter()
-   .append("svg:circle")
-   .attr("r", 4)
-   .attr("cx", function(d) { return x(dateFn(d)) })
-   .attr("cy", function(d) { return y(amountFn(d)) })
-})();

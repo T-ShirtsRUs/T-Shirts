@@ -2,7 +2,6 @@ require 'pry'
 require_relative './lib/connection'
 require_relative './lib/tshirts'
 require_relative './lib/purchases'
-require_relative './lib/customers'
 
 
 oneT = Tshirt.create({
@@ -31,7 +30,7 @@ fourT = Tshirt.create({
   price: 10,
   quantity: 10,
   img_url:"http://images.brandretailers.com/rock/assets/products/56946/large/pavement-night-falls-men-s-t-shirt-pvt12(1).jpg"
-  })
+})
 
 fiveT = Tshirt.create({
   name:"george carlin",

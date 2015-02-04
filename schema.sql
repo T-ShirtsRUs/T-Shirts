@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS tshirts;
 CREATE TABLE tshirts (
   id INTEGER PRIMARY KEY,
   name TEXT,
@@ -5,17 +6,17 @@ CREATE TABLE tshirts (
   quantity INTEGER,
   img_url TEXT
 );
-
-CREATE TABLE customers (
-  id INTEGER PRIMARY KEY,
-  name TEXT,
-  email TEXT
-);
-
+DROP TABLE IF EXISTS purchases;
 CREATE TABLE purchases (
   id INTEGER PRIMARY KEY,
-  customer_id INTEGER references customers,
+  name TEXT,
+  email TEXT,
   tshirt_id INTEGER references tshirts,
   quantity INTEGER,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+DROP TABLE IF EXISTS admin;
+CREATE TABLE admin (
+  id INTEGER PRIMARY KEY,
+  pword TEXT
 );

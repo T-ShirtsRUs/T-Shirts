@@ -1,12 +1,7 @@
 require 'active_record'
 
-class Purchases < ActiveRecord::Base
-  def customer
-    Customer.find_by({customer_id: self.id})
-  end
-
+class Purchase < ActiveRecord::Base
   def tshirt
-    Tshirt.find_by({tshirt_id: self.id})
+    Tshirt.find_by({id: self.tshirt_id})
   end
-
 end

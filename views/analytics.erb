@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <h1>Dashboard</h1>
+    <a href="/">
+    <button type="button" class="btn btn-primary" name="button" id="go-back"> Logout </button>
+    </a>
+    <a href="/admin">
+    <button type="button" class="btn btn-primary" name="button" id="analytics"> Home </button>
+    </a>
+  </nav>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <h1 id="headline">Analytics</h1>
+        <p> Elit exercitation officia aliquip occaecat quis veniam do esse dolore anim ea elit sit.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class ="container">
+    <div class="row graphs">
+      <div class="col-md-4 most-popular">
+        <img width=300 height=300 src="http://ecx.images-amazon.com/images/I/61AahwY%2Bj7L._UL1500_.jpg">
+        <h2>Most Popular TShirt </h2>
+        <p>Eiusmod cillum qui occaecat sunt veniam. Sint officia reprehenderit aliquip quis qui nostrud ipsum exercitation.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="bubbles"></div>
+        <h2>All TShirts Purchased</h2>
+        <p>Eiusmod cillum qui occaecat sunt veniam. Laboris minim minim sit consectetur dolore esse eiusmod commodo.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="barchart"></div>
+        <h2>All TShirts Purchased</h2>
+        <p>Eiusmod cillum qui occaecat sunt veniam. Labore voluptate ullamco nostrud irure laborum veniam dolore commodo Lorem ipsum aliquip deserunt sunt.</p>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="js/barchart_tshirts.js"></script>
+  <script src="js/bubblechart_tshirts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

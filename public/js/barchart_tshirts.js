@@ -1,47 +1,28 @@
 var thought = {
   "thoughts" : [
-    {"word" : "love",
+    {"word" : "wu tang",
     "count": 100
     },
 
-    {"word" : "you",
-    "count": 80
+    {"word" : "iggy asalea",
+    "count": 80,
+    "url": "https://img1.etsystatic.com/043/0/9257203/il_340x270.631035637_ampf.jpg"
     },
 
-    {"word" : "as",
+    {"word" : "minor threat",
     "count": 60
     },
 
-    {"word" : "much",
+    {"word" : "pavement",
     "count" : 40
     },
-     {"word" : "about",
-    "count": 101
+     {"word" : "george carlin",
+    "count": 20
     },
 
-    {"word" : "friends",
-    "count": 81
-    },
-
-    {"word" : "run",
-    "count": 61
-    },
-
-    {"word" : "away",
-    "count" : 11
-    },
-
-    {"word" : "carefree",
+    {"word" : "dice clay",
     "count": 10
     },
-
-    {"word" : "appalacian",
-    "count": 2
-    },
-
-    {"word" : "hypocritical",
-    "count" : 3
-    }
   ]
 }
 

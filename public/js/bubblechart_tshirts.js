@@ -1,47 +1,28 @@
 var thought = {
   "thoughts" : [
-    {"word" : "love",
+    {"word" : "wu tang",
     "count": 100
     },
 
-    {"word" : "you",
-    "count": 80
+    {"word" : "iggy asalea",
+    "count": 80,
+    "url": "https://img1.etsystatic.com/043/0/9257203/il_340x270.631035637_ampf.jpg"
     },
 
-    {"word" : "as",
+    {"word" : "minor threat",
     "count": 60
     },
 
-    {"word" : "much",
+    {"word" : "pavement",
     "count" : 40
     },
-     {"word" : "about",
-    "count": 100
+     {"word" : "george carlin",
+    "count": 20
     },
 
-    {"word" : "friends",
-    "count": 80
-    },
-
-    {"word" : "run",
-    "count": 60
-    },
-
-    {"word" : "away",
-    "count" : 11
-    },
-
-    {"word" : "carefree",
+    {"word" : "dice clay",
     "count": 10
     },
-
-    {"word" : "appalacian",
-    "count": 2
-    },
-
-    {"word" : "hypocritical",
-    "count" : 3
-    }
   ]
 }
 
@@ -95,12 +76,12 @@ function drawBubbleChart(root){
        .style("text-anchor", "middle")
        .style("font-size", function(d) {
             var len = d.name.substring(0, d.r / 3).length;
-            var size = d.r/3;
+            var size = d.r/2;
             size *= 5 / len;
             size += 1;
             return Math.round(size)+'px';
         })
-         .style({ "font-family":'Indie Flower'})
+         .style({ "font-family":'sans-serif'})
         .text(function(d) {
             if(d.r >= 10) { return d.name }
         });

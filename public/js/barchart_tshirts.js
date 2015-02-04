@@ -88,7 +88,7 @@ function drawBarChart(data) {
     .attr("dy", ".36em")
     .attr("text-anchor", "middle")//end moves text left...begin moves text right
     .attr('class', 'name')
-    .style({ "font-family":'Indie Flower'})
+    .style({ "font-family":'sans-serif'})
     .text(String)
 
   var hGuide = d3.select('.barchart').select('svg').append('g')
